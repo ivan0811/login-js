@@ -93,7 +93,7 @@ function loginsuccess(session) {
                 datalogin.password.push(addpassword);
                 var addname = prompt("Masukkan Nama");
                 datalogin.nama.push(addname);
-                cekloginpush();
+                cekloginpush(datalogin);
                 loginsuccess(session);
                 break;
             case 2:
@@ -131,7 +131,7 @@ function loginsuccess(session) {
 
                 break;
             case 5:
-                datalogin.ceklogin[session] == false;
+                datalogin.ceklogin[session] = false;
                 trylogin();
                 break;
             default:
@@ -151,7 +151,7 @@ function loginsuccess(session) {
                 loginsuccess(session);
                 break;
             case 2:
-                datalogin.ceklogin[session] == false;
+                datalogin.ceklogin[session] = false;
                 trylogin();
                 loginsuccess(session);
                 break;
