@@ -52,7 +52,7 @@ function cekloginpush(datalogin) {
 }
 var j = 0;
 
-function checklogin(j) {
+function checklogin() {
     if (user != '' && pass != '') {
         while (j <= 2 && loginvalid == false) {
             for (let i = 0; i < datalogin.username.length; i++) {
@@ -68,8 +68,8 @@ function checklogin(j) {
                 alert('anda terblokir!');
             } else {
                 alert('username atau password anda salah!');
-                trylogin();
                 j++;
+                trylogin();                
             }
         }
     } else {
@@ -179,5 +179,5 @@ function ShowUsername(session) {
 function trylogin() {
     user = prompt('username');
     pass = prompt('password');
-    checklogin(j);
+    checklogin();
 }
