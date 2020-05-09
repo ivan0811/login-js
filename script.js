@@ -50,7 +50,7 @@ function cekloginpush(datalogin) {
         datalogin.ceklogin.splice(i, 0, false);
     }
 }
-
+var j = 0;
 
 function checklogin(j) {
     if (user != '' && pass != '') {
@@ -125,13 +125,12 @@ function loginsuccess(session) {
                 } else {
                     alert(datalogin.username[deleteuser]);
                     alert('Data Tidak Ditemukan!');
-                    i = datalogin.username.length;
                 }
                 loginsuccess(datalogin.ceklogin.indexOf(true));
-
                 break;
             case 5:
                 datalogin.ceklogin[session] = false;
+                loginvalid = false;
                 trylogin();
                 break;
             default:
@@ -152,6 +151,7 @@ function loginsuccess(session) {
                 break;
             case 2:
                 datalogin.ceklogin[session] = false;
+                loginvalid = false;
                 trylogin();
                 loginsuccess(session);
                 break;
@@ -179,5 +179,5 @@ function ShowUsername(session) {
 function trylogin() {
     user = prompt('username');
     pass = prompt('password');
-    checklogin();
+    checklogin(j);
 }
