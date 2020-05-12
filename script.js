@@ -141,7 +141,7 @@ function loginsuccess(session) {
         var user = prompt('selamat datang ' + datalogin.nama[session] + '\n1. Putar Lagu dari youtube \n2. Logout');
         switch (parseInt(user)) {
             case 1:
-                var randomPlaylist = Math.floor(Math.random() * 10);
+                var randomPlaylist = Math.floor(Math.random() * playlist.length);
                 playlist.forEach(function (data) {
                     if (randomPlaylist == data.id) {
                         window.open(data.yturl);
